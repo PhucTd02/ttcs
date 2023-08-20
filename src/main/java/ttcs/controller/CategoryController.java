@@ -46,6 +46,8 @@ public class CategoryController {
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveCategory(@Valid Category category, BindingResult bindingResult, final RedirectAttributes redirectAttributes) {
+		System.out.println(category.getId());
+
 		if( bindingResult.hasErrors() ) {
 			return "/category/form";
 		}
